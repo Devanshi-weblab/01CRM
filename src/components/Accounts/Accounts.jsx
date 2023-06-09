@@ -9,7 +9,6 @@ const Accounts = () => {
 
 	const [sortByKey, setSortByKey] = useState('none');
 	const [sortOrder, setSortOrder] = useState('ascend');
-
 	const handleOnChange = (e) => {
 		setSortByKey(e.key);
 	}
@@ -75,12 +74,11 @@ const Accounts = () => {
 				)}
 			</div>
 			<hr style={{marginBottom: '0'}} />
-			<List
-				pagination={{ position, align, pageSize: 10 }}
-				className='list'
-				dataSource={sortedData}
-				renderItem={(item, index) => (
-					<AccountsListItem item={item} index={index} type={'account'} />
+			<List pagination={{ position, align, pageSize: 10 }}
+			 className='list' 
+			 dataSource={sortedData} 
+			 renderItem={(item, index) => (
+			<AccountsListItem item={item} index={index} type={'account'} />
 				)}
 			/>
 		

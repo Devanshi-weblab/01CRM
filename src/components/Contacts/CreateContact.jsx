@@ -10,10 +10,14 @@ const CreateContact = ({addNewItem}) => {
 	const [newContactDetails, setNewContactDetails] = useState({});
 
 	const handleOnSave = () => {
-		addNewItem({itemType: 'contacts', item: {...newContactDetails, _id: uuidv4(), createdTime: new Date()}});
-		setNewContactDetails({});
-		navigate('/contacts');
-	}
+			addNewItem({itemType: 'contacts', 
+				item: {...newContactDetails,
+				_id: uuidv4(), 
+				createdTime: new Date()}});
+			setNewContactDetails({});
+			navigate('/contacts');
+			}
+		
 
 	const handleOnCancel = () => {
 		setNewContactDetails({});
@@ -32,7 +36,7 @@ const CreateContact = ({addNewItem}) => {
 			onSave={handleOnSave}
 			onCancel={handleOnCancel}
 			handleOnChange={handleOnChange}
-		/>
+		/> 
 	</div>;
 }
 

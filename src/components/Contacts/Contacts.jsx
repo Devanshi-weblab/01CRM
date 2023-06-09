@@ -1,8 +1,6 @@
-
 import { Button, List, Select } from 'antd';
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-
 import { contactsData, contactsSortBy } from '../../data/contactsData';
 import ContactsListItem from './ContactsListItem';
 
@@ -84,7 +82,7 @@ const Contacts = () => {
 				className='list'
 				dataSource={sortedData}
 				renderItem={(item, index) => (
-					<ContactsListItem item={item} index={index} type={'contact'} />
+					<ContactsListItem key={index} item={item} index={index} type={'contact'} />
 				)}
 			/>
 		

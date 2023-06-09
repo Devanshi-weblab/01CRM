@@ -167,7 +167,7 @@ export const contactsFormStructure = [
 			{ key: 'dateOfBirth', label: 'Date of Birth', type: 'input' },
 			{ key: 'assistant', label: 'Assistant', type: 'input' },
 			{ key: 'assistantPhone', label: 'Assistant Phone', type: 'input' },
-			{ key: 'emailOptOut', label: 'Email Opt Out', type: 'checkbox' },
+			{ key: 'emailOptOut', label: 'Email Opt Out', type: 'input' },
 			{ key: 'skypeId', label: 'Skype ID', type: 'input' },
 			{ key: 'secondaryEmail', label: 'Secondary Email', type: 'input' },
 			{ key: 'twitter', label: 'Twitter', type: 'input' },
@@ -221,3 +221,4 @@ export const contactsData = [
 		reportingTo: 'Jane Doe',
 	},
 ];
+

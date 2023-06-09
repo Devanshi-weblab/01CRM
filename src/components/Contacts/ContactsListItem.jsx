@@ -4,7 +4,7 @@ import { EditOutlined } from '@ant-design/icons';
 
 const ContactsListItem = ({ item, index, onPress, type }) => {
 
-	const subDetails = [
+	const 	subDetails = [
 		{
 			key: 'phone',
 			label: 'Phone',

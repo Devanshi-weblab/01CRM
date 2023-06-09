@@ -1,10 +1,10 @@
 import { Select } from "antd";
 import TextArea from "antd/es/input/TextArea";
-import React from "react";
+import React,{useState}from "react";
 import CreatePageHeader from "./CreatePageHeader";
 
-const CreateForm = ({ structure, title, onSave, onCancel, handleOnChange }) => {
-
+const Form = ({ structure, title, onSave, onCancel,handleOnChange}) => {
+	console.log(structure)
 	return (
 		<div>
 			<CreatePageHeader title={title} onSave={onSave} onCancel={onCancel} />
@@ -12,8 +12,7 @@ const CreateForm = ({ structure, title, onSave, onCancel, handleOnChange }) => {
 				{structure.map((item, index) => {
 					return (
 						<div key={index} className="formSubHeading">
-							<h4>{item?.title}</h4>
-
+						 	<h4>{item?.title}</h4>
 							<div className="formSubHeadingContent">
 								{item.fields?.map((field, index) => {
 									return (
@@ -26,7 +25,6 @@ const CreateForm = ({ structure, title, onSave, onCancel, handleOnChange }) => {
 														   onChange={e => handleOnChange({key: field.key, value: e.target.value})} />
 												</div>
 											}
-
 											{(field.type === 'select') &&
 												<div className="formFieldSelect">
 													<label>{field.label}</label>
@@ -49,7 +47,8 @@ const CreateForm = ({ structure, title, onSave, onCancel, handleOnChange }) => {
 											{(field.type === 'checkbox') &&
 												<div className="formFieldCheckbox">
 													<label>{field.label}</label>
-													<input type="checkbox" required={field.required} onChange={e => handleOnChange({key: field.key, value: e.target.value})} />
+													<input type="checkbox" required={field.required}
+													 onChange={e => handleOnChange({key: field.key, value: e.target.value})} />
 												</div>
 											}
 										</div>
@@ -58,7 +57,7 @@ const CreateForm = ({ structure, title, onSave, onCancel, handleOnChange }) => {
 								})}
 								
 							</div>
-						</div>
+					  </div>
 					)
 				})}
 			</div>
@@ -66,4 +65,4 @@ const CreateForm = ({ structure, title, onSave, onCancel, handleOnChange }) => {
 	);
 };
 
-export default CreateForm;
+export default Form;

@@ -10,17 +10,22 @@ const NavBar = () => {
 
 	const items = [
 		{
-			label: 'Leads',
-			path: '/leads',
+			label: 'Deals',
+			path: '/deals',
 		},
 		{
-			label: 'Contacts',
-			path: '/contacts',
+			label: 'Leads',
+			path: '/leads',
 		},
 		{
 			label: 'Accounts',
 			path: '/accounts',
 		},
+		{
+			label: 'Contacts',
+			path: '/contacts',
+		}
+
 	];
 
 	const path = window.location.pathname;

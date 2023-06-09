@@ -29,8 +29,16 @@ export const accountsSortBy = [
 		),
 		value: 'Created time',
 	},
-	{ key: 'website', label: (<div>Website</div>), value: 'Website' },
-	{ key: 'phone', label: (<div>Phone</div>), value: 'Phone' },
+	{ 	key: 'website',
+		label: (
+			<div>Website</div>
+		), 
+		value: 'Website' },
+	{ 	key: 'phone',
+		label: (
+		<div>Phone</div>
+		), 
+		value: 'Phone' },
 	{ key: 'industry', label: (<div>Industry</div>), value: 'Industry' },
 	{ key: 'accountType', label: (<div>Account type</div>), value: 'Account type' },
 	{ key: 'billingCity', label: (<div>Billing city</div>), value: 'Billing city' },

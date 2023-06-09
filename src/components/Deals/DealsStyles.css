@@ -1,0 +1,17 @@
+.subItem{
+    margin-left: 7px;
+}
+.cardContainer{
+    display: flex;
+    overflow: scroll;
+    height:100vh;
+}
+
+.cardItem{
+    margin-left:2%;
+    color: black;
+}
+
+.cardItem10{
+    margin-right:2%;
+}
