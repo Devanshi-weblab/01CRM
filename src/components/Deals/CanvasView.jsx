@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Button, List, Result, Select, Table } from "antd";      
+import { Button, List, Result, Select, Table } from "antd";   
+import { useNavigate } from "react-router-dom";   
 
 function CanvasView() {
   const [data, setData] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     fetch("https://647efa36c246f166da8fce52.mockapi.io/dealsData").then(
       (result) => {
@@ -23,8 +24,8 @@ function CanvasView() {
   },
   {
     title: 'Amount',
-    dataIndex: 'amount',
-    key: 'amount',
+    dataIndex: 'ammount',
+    key: 'ammount',
   },
   {
     title: 'Stage',
@@ -33,12 +34,12 @@ function CanvasView() {
   },
   {
     title: 'Closing Date',
-    dataIndex: 'closingDate',
-    key:'closingDate'
+    dataIndex: 'closeDate',
+    key:'closeDate'
   },
   {
     title: 'accountName',
-    dataIndex: 'Account Name',
+    dataIndex: 'accountName',
     key:'accountName'
   },
   {
@@ -59,7 +60,7 @@ function CanvasView() {
           return{
             onClick: (event) =>{
               console.log(record,rowIndex)
-              Navigate(`/deals/${record.id}`)
+              navigate(`/deals/${record.id}`)
             },
             style:{cursor: 'pointer'},
           };

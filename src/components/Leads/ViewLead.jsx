@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Card, Space, Button, Modal, Checkbox,Form} from "antd";
-import { blue } from "@mui/material/colors";
 // import '../../styles.css';
 import Trials from "./Trials";
 import ConvertForm from "./ConvertForm";
@@ -13,7 +12,6 @@ const ViewLead = () => {
   const [isChecked,setIsChecked] = useState(false);
 
   const cardStyle = {
-    backgroundColor: blue,
     borderRadius: "20px",
     boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
     padding: "16px",

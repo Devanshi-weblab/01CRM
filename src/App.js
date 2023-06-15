@@ -14,6 +14,7 @@ import ListView from './components/Deals/ListView';
 import CanvasView from './components/Deals/CanvasView';
 import CreateDeals from './components/Deals/CreateDeals';
 import ViewLead from './components/Leads/ViewLead';
+import ViewDeal from './components/Deals/ViewDeal';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
 				<Route path="accounts" element={<Accounts />} />
 				<Route path='accounts/create' element={<CreateAccount addNewItem={addNewItem} />} />	
 				<Route path="deals" element={<Deals />} />
+				<Route path="deals/:id" element={<ViewDeal />} />
 				<Route path="deals/create" element={<CreateDeals addNewItem={addNewItem}/>} />
 				<Route path="deals/list" element={<Deals />} />
 				<Route path="KanbanView" element={<KanbanView />} />
