@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, List, Result, Select } from "antd";
+import { Button, List, Result, Select, Table } from "antd";      
 
 function CanvasView() {
   const [data, setData] = useState([]);
@@ -15,34 +15,91 @@ function CanvasView() {
   }, []);
 
   console.warn(data);
+  const columns = [
+  {
+    title: 'Deal Name',
+    dataIndex: 'dealName',
+    key: 'dealName',
+  },
+  {
+    title: 'Amount',
+    dataIndex: 'amount',
+    key: 'amount',
+  },
+  {
+    title: 'Stage',
+    dataIndex: 'stage',
+    key:'stage'
+  },
+  {
+    title: 'Closing Date',
+    dataIndex: 'closingDate',
+    key:'closingDate'
+  },
+  {
+    title: 'accountName',
+    dataIndex: 'Account Name',
+    key:'accountName'
+  },
+  {
+    title: 'Contact Name',
+    dataIndex: 'contactName',
+    key:'contactName'
+  },
+  {
+    title: 'Deal Owner',
+    dataIndex: 'dealOwner',
+    key:'dealOwner'
+  },
+];
 
   return (
-    
-    <List
-      dataSource={data}
-      pagination={{ position: "bottom", align: "center", pageSize: 10 }}
-      className="list"
-      renderItem={(item,index) => (
-        <List.Item>
+    <Table
+        onRow={(record,rowIndex)=>{
+          return{
+            onClick: (event) =>{
+              console.log(record,rowIndex)
+              Navigate(`/deals/${record.id}`)
+            },
+            style:{cursor: 'pointer'},
+          };
+        }}
+        columns={columns}
+        dataSource={data}
+       />
 
-          <div>
-        
-          <div><h5>Contact Owner:{item.contactOwner}</h5></div>
-          <div>Account Name: {item.accountName}</div>
-          <div>Ammount: ${item.ammount} </div>
-          <div>Expected Revenue:${item.expectedRevenue} </div>
-          <div>Deal Name:{item.dealName} </div>
-          <div>Next Step:{item.nextStep} </div>
-          <div>Contact Name:{item.contactName} </div>
-          <div>Close Date:{item.closeDate} </div>
-          <div>Probability:{item.probability} </div>
-          <div>Campaign Source:{item.campaignSource} </div>
-          <div>Lead Source:{item.leadSource} </div>
-          <div>Description:{item.description} </div>
-          </div>
-        </List.Item>
-      )}
-    />
+
+
+
+
+
+
+
+    // <List
+    //   dataSource={data}
+    //   pagination={{ position: "bottom", align: "center", pageSize: 10 }}
+    //   className="list"
+    //   renderItem={(item,index) => (
+    //     <List.Item>
+
+    //       <div className="dealContainer">
+    //       <div>Contact Owner:{item.contactOwner}</div>
+    //       <div>Deal Owner:{item.dealOwner}</div>
+    //       <div>Account Name: {item.accountName}</div>
+    //       <div>Ammount: ${item.ammount} </div>
+    //       <div>Expected Revenue:${item.expectedRevenue} </div>
+    //       <div>Deal Name:{item.dealName} </div>
+    //       <div>Next Step:{item.nextStep} </div>
+    //       <div>Contact Name:{item.contactName} </div>
+    //       <div>Close Date:{item.closeDate} </div>
+    //       <div>Probability:{item.probability} </div>
+    //       <div>Campaign Source:{item.campaignSource} </div>
+    //       <div>Lead Source:{item.leadSource} </div>
+    //       <div>Description:{item.description} </div>
+    //       </div>
+    //      </List.Item>
+    //   )}
+    // />
   );
 }
 

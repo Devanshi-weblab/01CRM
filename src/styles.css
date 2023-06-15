@@ -175,3 +175,12 @@
 .subDetailValue {
 	margin-right: 10px;
 }
+
+.flexViewLead-container{
+	display:flex;
+}
+
+
+.flexViewLead-item{
+	flex:1;
+}

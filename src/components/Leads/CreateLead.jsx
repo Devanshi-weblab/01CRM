@@ -11,6 +11,21 @@ const CreateLead = ({addNewItem}) => {
 	const [newLeadDetails, setNewLeadDetails] = useState({});
 
 
+	fetch("https://647efa36c246f166da8fce52.mockapi.io/leadsData",{
+		method:'POST',
+		headers:{
+			'Accept':'application/json',
+			'Content-Type':'application/json'
+		},
+	
+		body:JSON.stringify(newLeadDetails)
+	   }).then((result)=>{
+		  result.json().then((resp)=>{
+		  console.warn("resp",resp)
+	  })
+	})
+
+
 	const handleOnSave = () => {
 		addNewItem({itemType: 'leads', item: {...newLeadDetails, _id: uuidv4(), createdTime: new Date()}});
 		setNewLeadDetails({});

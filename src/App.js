@@ -13,6 +13,7 @@ import KanbanView from './components/Deals/KanbanView';
 import ListView from './components/Deals/ListView';
 import CanvasView from './components/Deals/CanvasView';
 import CreateDeals from './components/Deals/CreateDeals';
+import ViewLead from './components/Leads/ViewLead';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
 			    <Route path="/" element={<NavBar />}>
 				<Route index element={<Leads />} />
 				<Route path='leads' element={<Leads />} />
+				<Route path='leads/:id' element={<ViewLead />} />
 				<Route path='leads/create' element={<CreateLead addNewItem={addNewItem}/>} />
 				<Route path="contacts" element={<Contacts />} />
 				<Route path='contacts/create' element={<CreateContact addNewItem={addNewItem}/>} />

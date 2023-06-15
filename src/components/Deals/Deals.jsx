@@ -110,8 +110,8 @@ function Deals() {
         </div>
       </div>    
       <hr />
-      <CanvasView/>
-
+   
+      <CanvasView></CanvasView>
       {/* <KanbanView/> */}
       
       </React.Fragment>
